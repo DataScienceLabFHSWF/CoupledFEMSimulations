@@ -59,7 +59,7 @@ def extractData(filepath):
 # durchlaufend nummeriert?
 # unterschiedlich fuer M1, M2 und M3
 
-odbFiles= [os.path.join('FEM_SIMS', f) for f in os.listdir('FEM_SIMS') if file.endswith(".odb")]
+odbFiles= [os.path.join('FEM_SIMS', f) for f in os.listdir('FEM_SIMS') if f.endswith(".odb")]
 print(len(odbFiles))
 nodelabels="'Stempel_innen_mitte', 'Stempel_aussen', 'Matrize_zarge_oben', 'Matrize_zarge_mitte','Matrize_zarge_unten', 'Werkstueck_boden', 'Werkstueck_zarge_unten' , 'Werkstueck_zarge_mitte', 'Werkstueck_zarge_oben'"
 
