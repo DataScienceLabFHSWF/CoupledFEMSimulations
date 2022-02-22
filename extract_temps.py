@@ -1,7 +1,6 @@
 from odbAccess import *
 import csv
-from os import listdir
-from os.path import isfile, join, splitext
+import os
 import numpy as np
 
 def extractData(filepath):
@@ -54,14 +53,14 @@ def extractData(filepath):
             for j, node in enumerate(nodelist):
                 data[i][j] =  NodetempValues[node].data
 
-    print('saving to ' + 'output' + '{}.csv'.format(splitext(filepath)[0]))
-    np.savetxt(join('output','{}.csv'.format(splitext(filepath)[0])), data, header=nodelabels, delimiter=",", comments='')
+    print('saving to ' + 'output' + '{}.csv'.format(os.splitext(filepath)[0]))
+    np.savetxt(os.path.join('output','{}.csv'.format(os.splitext(filepath)[0])), data, header=nodelabels, delimiter=",", comments='')
 
 # durchlaufend nummeriert?
 # unterschiedlich fuer M1, M2 und M3
 
-odbFiles= [join('test', f) for f in listdir('test') if isfile(join('test', f))]
-print(odbFiles)
+odbFiles= [os.path.join('FEM_SIMS', f) for f in os.listdir('FEM_SIMS') if file.endswith(".odb")]
+print(len(odbFiles))
 nodelabels="'Stempel_innen_mitte', 'Stempel_aussen', 'Matrize_zarge_oben', 'Matrize_zarge_mitte','Matrize_zarge_unten', 'Werkstueck_boden', 'Werkstueck_zarge_unten' , 'Werkstueck_zarge_mitte', 'Werkstueck_zarge_oben'"
 
 for file in odbFiles:
