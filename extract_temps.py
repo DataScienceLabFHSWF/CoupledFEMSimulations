@@ -53,8 +53,8 @@ def extractData(filepath):
             for j, node in enumerate(nodelist):
                 data[i][j] =  NodetempValues[node].data
 
-    print('saving to ' + 'output' + '{}.csv'.format(os.splitext(filepath)[0]))
-    np.savetxt(os.path.join('output','{}.csv'.format(os.splitext(filepath)[0])), data, header=nodelabels, delimiter=",", comments='')
+    print('saving to ' + 'output' + '{}.csv'.format(os.path.splitext(filepath)[0]))
+    np.savetxt(os.path.join('output','{}.csv'.format(os.path.splitext(filepath)[0])), data, header=nodelabels, delimiter=",", comments='')
 
 # durchlaufend nummeriert?
 # unterschiedlich fuer M1, M2 und M3
