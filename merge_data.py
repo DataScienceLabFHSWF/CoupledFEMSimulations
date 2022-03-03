@@ -4,21 +4,9 @@ import os
 from itertools import groupby
 import re
 
-def add_times(df, step):
-    if step=='M1':
-       #6 seconds between each row
-       t=pd.read_csv(os.path.join('timestamps', 'timestamps_M1.txt'))
-    elif step=='M2':
-       t=pd.read_csv(os.path.join('timestamps', 'timestamps_M2.txt'))
-    elif step=='M3':
-       t=pd.read_csv(os.path.join('timestamps', 'timestamps_M3.txt'))
-  
-    df = df.set_index(t)
-    return df
-
 def group_by_paramset():
     all_csv = sorted(glob(os.path.join('raw','*.csv')))
-    
+
     for filename in all_csv:
         # start of the param set in filenames
         param_set = str(filename[11:23])
@@ -32,7 +20,7 @@ def group_by_paramset():
                 df = pd.concat(pd.read_csv(f) for f in group)
                 #name with longest entry from group cause of all params
                 merge_name = sorted(group, key=len)[-1][11:-4]
-                df.to_csv(os.path.join('merged','merged_{}.csv'.format(merge_name)))   
+                df.to_csv(os.path.join('merged', 'merged_{}.csv'.format(merge_name)))   
     return 0
    
 
