@@ -43,16 +43,21 @@ def extractData(filepath):
     shape=(rows,cols)
     data = np.zeros(shape)
     #iterate over all steps
+    times= []
+
     for step in odb.steps.keys():
-        # iterate overv all frames (history)
+        # iterate over all frames (history)        
         for i in range(len(odb.steps[step].frames)):
             frame=odb.steps[step].frames[i]
             NodetempValues=frame.fieldOutputs['TEMP'].values
+            times.append(frame.frameValue)
             #iterate over each node
             #for j in range(len(NodetempValues)):
             for j, node in enumerate(nodelist):
                 data[i][j] =  NodetempValues[node].data
 
+    times = np.array(times)
+    data = np.column_stack((times, data))
     print('saving to ' + 'output' + '{}.csv'.format(os.path.splitext(filepath)[0]))
     np.savetxt(os.path.join('output','{}.csv'.format(os.path.splitext(filepath)[0])), data, header=nodelabels, delimiter=",", comments='')
 
@@ -61,7 +66,7 @@ def extractData(filepath):
 
 odbFiles= [os.path.join('FEM_SIMS', f) for f in os.listdir('FEM_SIMS') if f.endswith(".odb")]
 print(len(odbFiles))
-nodelabels="'Stempel_innen_mitte', 'Stempel_aussen', 'Matrize_zarge_oben', 'Matrize_zarge_mitte','Matrize_zarge_unten', 'Werkstueck_boden', 'Werkstueck_zarge_unten' , 'Werkstueck_zarge_mitte', 'Werkstueck_zarge_oben'"
+nodelabels="'timestamp', 'Stempel_innen_mitte', 'Stempel_aussen', 'Matrize_zarge_oben', 'Matrize_zarge_mitte','Matrize_zarge_unten', 'Werkstueck_boden', 'Werkstueck_zarge_unten' , 'Werkstueck_zarge_mitte', 'Werkstueck_zarge_oben'"
 
 for file in odbFiles:
     extractData(file)
