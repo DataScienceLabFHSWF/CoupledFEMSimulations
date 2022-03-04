@@ -19,8 +19,6 @@ def group_by_paramset():
     M1_list = list(filter(lambda k: 'M1' in k, all_csv))
     M2_list = list(filter(lambda k: 'M2' in k, all_csv))
     M3_list = list(filter(lambda k: 'M3' in k, all_csv))
-    #templist = list(set(all_csv).symmetric_difference(M1_list))
-    M2M3 = M2_list+M3_list
 
     for filename in M3_list:
         # start of the param set in filenames
