@@ -58,8 +58,8 @@ def extractData(filepath):
 
     times = np.array(times)
     data = np.column_stack((times, data))
-    print('saving to ' + 'output' + '{}.csv'.format(os.path.splitext(filepath)[0]))
-    np.savetxt(os.path.join('output','{}.csv'.format(os.path.splitext(filepath)[0])), data, header=nodelabels, delimiter=",", comments='')
+    print('saving to ' + 'raw' + '{}.csv'.format(os.path.splitext(filepath)[0]))
+    np.savetxt(os.path.join('raw','{}.csv'.format(os.path.splitext(filepath)[0])), data, header=nodelabels, delimiter=",", comments='')
 
 # durchlaufend nummeriert?
 # unterschiedlich fuer M1, M2 und M3
@@ -68,6 +68,11 @@ odbFiles= [os.path.join('FEM_SIMS', f) for f in os.listdir('FEM_SIMS') if f.ends
 print(len(odbFiles))
 nodelabels="'timestamp', 'Stempel_innen_mitte', 'Stempel_aussen', 'Matrize_zarge_oben', 'Matrize_zarge_mitte','Matrize_zarge_unten', 'Werkstueck_boden', 'Werkstueck_zarge_unten' , 'Werkstueck_zarge_mitte', 'Werkstueck_zarge_oben'"
 
+corrupt_files = []
 for file in odbFiles:
-    extractData(file)
-
+    try:
+        extractData(file)
+    except OdbError:
+        corrupt_files.append(file)
+        pass
+np.savetxt('corrupt_files.txt', np.array(corrupt_files))
