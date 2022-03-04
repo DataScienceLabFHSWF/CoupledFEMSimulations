@@ -1,3 +1,4 @@
+from posixpath import split
 import pandas as pd
 from glob import glob
 import os
@@ -6,18 +7,22 @@ import re
 
 def group_by_paramset():
     all_csv = sorted(glob(os.path.join('raw','*.csv')))
-
-    for filename in all_csv:
+    M3_list = list(filter(lambda k: 'M3' in k, all_csv))
+    templist = list(set(all_csv).symmetric_difference(M3_list))
+    
+    for filename in M3_list:
         # start of the param set in filenames
-        param_set = str(filename[11:23])
-
+        param_set = str(filename[11:22])
+        print(param_set)
         # groups the filenames by the beginning of their parameter sets
-        split_csv = [ list(i) for j, i in groupby(all_csv, lambda a: re.split(r'WTP-M\d_{}'.format(param_set), a)[0])]
-
+        # merge 1 and 2 first then 3
+        # make 3 seperate lists of steps
+        split_csv = [ list(i) for j, i in groupby(templist, lambda a: re.split(r'WTP-M\d_{}'.format(param_set), a)[0])]
         # merge the files if all 3 steps are in the group
         for group in split_csv:
-            if len(group)>=2:
-                df = pd.concat(pd.read_csv(f) for f in group)
+            if len(group)==2:
+                group.append(filename)
+                df = pd.concat(pd.read_csv(f) for f in sorted(group))
                 #name with longest entry from group cause of all params
                 merge_name = sorted(group, key=len)[-1][11:-4]
                 df.to_csv(os.path.join('merged', 'merged_{}.csv'.format(merge_name)))   
