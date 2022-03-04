@@ -8,6 +8,7 @@ import re
 def group_by_paramset():
     all_csv = sorted(glob(os.path.join('raw','*.csv')))
     M3_list = list(filter(lambda k: 'M3' in k, all_csv))
+    # make a temporary XOR list
     templist = list(set(all_csv).symmetric_difference(M3_list))
     
     for filename in M3_list:
@@ -16,11 +17,11 @@ def group_by_paramset():
         print(param_set)
         # groups the filenames by the beginning of their parameter sets
         # merge 1 and 2 first then 3
-        # make 3 seperate lists of steps
         split_csv = [ list(i) for j, i in groupby(templist, lambda a: re.split(r'WTP-M\d_{}'.format(param_set), a)[0])]
         # merge the files if all 3 steps are in the group
         for group in split_csv:
             if len(group)==2:
+                #if M1 and M2 fit together append the fitting M3 and concat
                 group.append(filename)
                 df = pd.concat(pd.read_csv(f) for f in sorted(group))
                 #name with longest entry from group cause of all params
