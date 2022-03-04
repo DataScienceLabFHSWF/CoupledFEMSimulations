@@ -12,7 +12,7 @@ def group_by_paramset():
     
     for filename in M3_list:
         # start of the param set in filenames
-        param_set = str(filename[11:22])
+        param_set = str(filename[11:26])
         print(param_set)
         # groups the filenames by the beginning of their parameter sets
         # merge 1 and 2 first then 3
