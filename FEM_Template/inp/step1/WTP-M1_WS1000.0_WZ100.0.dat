@@ -1,0 +1,789 @@
+1
+
+   Abaqus 2021                                  Date 09-Mar-2022   Time 10:36:32
+   For use by FACHHOCHSCHULE SUEDWESTFALEN under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine DESKTOP-NU1UK5H 
+                          you are authorized to run
+                          Abaqus/Standard until 31-Jul-2023
+
+                          Your site id is: 200000000011789 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      http://www.3ds.com/products/simulia/locations/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                       Abaqus 2021                       * 
+                *                                                         * 
+                *          BUILD ID: 2020_03_06-15.50.37 167380           * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2021 manuals                            * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Node
+  *Element, type=C3D8T
+  *Nset, nset=ASSEMBLY_PLATINE-1_PLATINE
+  *Elset, elset=ASSEMBLY_PLATINE-1_PLATINE
+  *Node
+  *Element, type=C3D8T
+  *Nset, nset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *Nset, nset=ASSEMBLY_WZ_MATRIZE-1_WZ_MATRIZE-REFPT_
+  *Elset, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *Node
+  *Element, type=C3D8T
+  *Nset, nset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *Nset, nset=ASSEMBLY_WZ_STEMPEL-1_WZ_STEMPEL-REFPT_
+  *Elset, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *Nset, nset=ASSEMBLY_PLATINE_AUFLAGE
+  *Nset, nset=ASSEMBLY_PLATINE_AUSWERFER
+  *Nset, nset=ASSEMBLY_PLATINE_GEGENKRAFT
+  *Nset, nset=ASSEMBLY_PLATINE_MITTENSCHNITT
+  *Nset, nset=ASSEMBLY_PLATINE_SCHEIBENSCHNITT-1
+  *Nset, nset=ASSEMBLY_PLATINE_SCHEIBENSCHNITT-2
+  *Nset, nset=ASSEMBLY_RP_MATRIZE
+  *Nset, nset=ASSEMBLY_RP_STEMPEL
+  *Nset, nset=ASSEMBLY_WZ_ALL
+  *Nset, nset=ASSEMBLY_WZ_KUEHLBOHRUNGEN
+  *Elset, elset=ASSEMBLY_PLATINE_AUFLAGE
+  *Elset, elset=ASSEMBLY_PLATINE_AUSWERFER
+  *Elset, elset=ASSEMBLY_PLATINE_MITTENSCHNITT
+  *Elset, elset=ASSEMBLY_PLATINE_SCHEIBENSCHNITT-1
+  *Elset, elset=ASSEMBLY_PLATINE_SCHEIBENSCHNITT-2
+  *Elset, elset=ASSEMBLY_WZ_ALL
+  *Elset, elset=ASSEMBLY_WZ_KUEHLBOHRUNGEN
+  *Elset, elset=ASSEMBLY__MATRIZE_KONTAKT_S4
+  *Elset, elset=ASSEMBLY__MATRIZE_KONTAKT_S6
+  *Elset, elset=ASSEMBLY__PLATINE_OBEN_S1
+  *Elset, elset=ASSEMBLY__PLATINE_OBEN_S5
+  *Elset, elset=ASSEMBLY__PLATINE_OBEN_UNTEN_S1
+  *Elset, elset=ASSEMBLY__PLATINE_OBEN_UNTEN_S2
+  *Elset, elset=ASSEMBLY__PLATINE_OBEN_UNTEN_S5
+  *Elset, elset=ASSEMBLY__PLATINE_UNTEN_S2
+  *Elset, elset=ASSEMBLY__PLATINE_UNTEN_S5
+  *Elset, elset=ASSEMBLY__STEMPEL_KONTAKT_S5
+  *physicalconstants, absolutezero=-273.15, stefanboltzmann=5.67037e-11
+  *material, name=STAHLBLECH_22MNB5_AL-SI
+  *conductivity
+  *density
+  *elastic
+  *expansion, zero=20
+  *specificheat
+  *material, name=WERKZEUGSTAHL_1_2367
+  *conductivity
+  *density
+  *elastic
+  *specificheat
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *solidsection, elset=ASSEMBLY_PLATINE-1_PLATINE, material=STAHLBLECH_22MNB5_AL-SI
+  *solidsection, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE, material=WERKZEUGSTAHL_1_2367
+  *solidsection, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL, material=WERKZEUGSTAHL_1_2367
+  *solidsection, elset=ASSEMBLY_PLATINE-1_PLATINE, material=STAHLBLECH_22MNB5_AL-SI
+  *solidsection, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE, material=WERKZEUGSTAHL_1_2367
+  *solidsection, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL, material=WERKZEUGSTAHL_1_2367
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *surface, type=ELEMENT, name=ASSEMBLY_MATRIZE_KONTAKT
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_STEMPEL_KONTAKT
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *surface, type=ELEMENT, name=ASSEMBLY_MATRIZE_KONTAKT
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_STEMPEL_KONTAKT
+  *surface, type=ELEMENT, name=ASSEMBLY_MATRIZE_KONTAKT
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_STEMPEL_KONTAKT
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *surfaceinteraction, name=KONTAKT_WS-WZ
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *surfaceinteraction, name=KONTAKT_WS-WZ
+  *friction, sliptolerance=0.005
+  *gapconductance
+  *gapconductance, pressure
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *surfaceinteraction, name=KONTAKT_WS-WZ
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *surfaceinteraction, name=KONTAKT_WS-WZ
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *contactpair, interaction=KONTAKT_WS-WZ, type=SURFACETOSURFACE
+  *rigidbody, refnode=ASSEMBLY_RP_MATRIZE, elset=ASSEMBLY_WZ_MATRIZE-1_MATRIZE
+  *rigidbody, refnode=ASSEMBLY_RP_STEMPEL, elset=ASSEMBLY_WZ_STEMPEL-1_STEMPEL
+  *surface, type=ELEMENT, name=ASSEMBLY_MATRIZE_KONTAKT
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_OBEN_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_PLATINE_UNTEN
+  *surface, type=ELEMENT, name=ASSEMBLY_STEMPEL_KONTAKT
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *initialconditions, type=TEMPERATURE
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *output, field
+  *output, history, variable=PRESELECT
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *elementoutput, directions=YES
+  *Step, name=Step-1, nlgeom=NO, inc=80
+  *output, field
+  *output, history, variable=PRESELECT
+  *Step, name=Step-2, nlgeom=NO, inc=30
+  *output, field
+  *output, history, variable=PRESELECT
+  *Step, name=Step-3, nlgeom=NO, inc=5
+  *output, field
+  *output, history, variable=PRESELECT
+  *Step, name=Step-4, nlgeom=NO, inc=20
+  *output, field
+  *output, history, variable=PRESELECT
+  *Step, name=Step-1, nlgeom=NO, inc=80
+  *Step, name=Step-2, nlgeom=NO, inc=30
+  *Step, name=Step-3, nlgeom=NO, inc=5
+  *Step, name=Step-4, nlgeom=NO, inc=20
+  *Step, name=Step-1, nlgeom=NO, inc=80
+  Aufwaermen der Platine                                                          
+  *coupledtemperature-displacement, creep=NONE, deltmx=20
+  *boundary
+  *boundary
+  *boundary
+  *dflux
+  *modelchange, type=CONTACTPAIR, remove
+  *modelchange, type=CONTACTPAIR, remove
+  *modelchange, type=CONTACTPAIR, remove
+  *modelchange, type=CONTACTPAIR, remove
+  *output, field
+  *nodeoutput
+  *elementoutput, directions=YES
+  *contactoutput
+  *output, history, variable=PRESELECT
+  *endstep
+  *Step, name=Step-2, nlgeom=NO, inc=30
+  Transfer der Platine                                                            
+  *coupledtemperature-displacement, creep=NONE, deltmx=10
+  *dflux, op=NEW
+  *sfilm
+  *sfilm
+  *sradiate
+  *output, field
+  *nodeoutput
+  *elementoutput, directions=YES
+  *contactoutput
+  *output, history, variable=PRESELECT
+  *endstep
+  *Step, name=Step-3, nlgeom=NO, inc=5
+  Kontaktaufbringung Platine/Stempel                                              
+  *coupledtemperature-displacement, creep=NONE, deltmx=10
+  *boundary
+  *modelchange, type=CONTACTPAIR, add
+  *modelchange, type=CONTACTPAIR, add
+  *output, field
+  *nodeoutput
+  *elementoutput, directions=YES
+  *contactoutput
+  *output, history, variable=PRESELECT
+  *endstep
+  *Step, name=Step-4, nlgeom=NO, inc=20
+  Kontaktaufbringung Platine/Matrize                                              
+  *coupledtemperature-displacement, creep=NONE, deltmx=10
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *modelchange, type=CONTACTPAIR, add
+  *modelchange, type=CONTACTPAIR, add
+  *output, field
+  *nodeoutput
+  *elementoutput, directions=YES
+  *contactoutput
+  *output, history, variable=PRESELECT
+  *endstep
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *Step, name=Step-1, nlgeom=NO, inc=80
+  *coupledtemperature-displacement, creep=NONE, deltmx=20
+  *boundary
+  *boundary
+  *boundary
+  *endstep
+
+ ***WARNING: OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE 
+             LOADS IN THIS STEP
+  *Step, name=Step-2, nlgeom=NO, inc=30
+  *coupledtemperature-displacement, creep=NONE, deltmx=10
+  *endstep
+
+ ***WARNING: OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE 
+             LOADS IN THIS STEP
+  *Step, name=Step-3, nlgeom=NO, inc=5
+  *coupledtemperature-displacement, creep=NONE, deltmx=10
+  *boundary
+  *endstep
+
+ ***WARNING: OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE 
+             LOADS IN THIS STEP
+  *Step, name=Step-4, nlgeom=NO, inc=20
+  *coupledtemperature-displacement, creep=NONE, deltmx=10
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *cload
+  *endstep
+
+
+
+
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                  2208
+          NUMBER OF ELEMENTS DEFINED BY THE USER AND *TIE         870
+          NUMBER OF INTERNAL ELEMENTS GENERATED FOR CONTACT      1336
+          NUMBER OF NODES IS                                     6344
+          NUMBER OF NODES DEFINED BY THE USER                    2336
+          NUMBER OF INTERNAL NODES GENERATED BY THE PROGRAM      4008
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                14694
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =  0.30000    
+       SYSTEM TIME (SEC)    =  0.10000    
+       TOTAL CPU TIME (SEC) =  0.40000    
+       WALLCLOCK TIME (SEC) =          1
+1
+
+   Abaqus 2021                                  Date 09-Mar-2022   Time 10:36:37
+   For use by FACHHOCHSCHULE SUEDWESTFALEN under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+     Aufwaermen der Platine                                                               TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     C O U P L E D - T E M P E R A T U R E - D I S P L A C E M E N T   A N A L Y S I S
+
+
+          Aufwaermen der Platine                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 6.00    
+          AND A TOTAL TIME PERIOD OF                            360.    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                0.600    
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 6.00    
+
+          CREEP AND SWELLING EFFECTS ARE OMITTED IN THIS STEP
+
+     THE SIZE OF THE TIME INCREMENT IS CONTROLLED BY -
+          THE TEMPERATURE CHANGE PER INCREMENT NOT EXCEEDING            20.0    
+
+          CREEP AND SWELLING EFFECTS WILL BE IGNORED.
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3972911E-04
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                      -68.45048           44.08345         -0.3799606    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                       1.157451          0.9130175           2.070388    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                      0.2333986         -3.6341752E-03      2.3402931E-03
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      0.8858880          0.2583011           1.144149    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -0.1882386         -3.2764255E-08     -1.6608195E-07
+
+
+                              RIGID BODY MASS AND INERTIA 
+                              --------------------------- 
+
+ 
+ 
+                     REFERENCE NODE IS:      1773
+ 
+ 
+                     POSITION OF THE REFERENCE NODE
+                               X                Y                Z
+                          0.000000          -1.500000         -1.0000000E-08
+ 
+ 
+                     TOTAL MASS OF RIGID BODY
+ 
+                         1.0226696E-04
+ 
+ 
+                     LOCATION OF THE CENTER OF MASS OF RIGID BODY
+                         -8.1996367E+01     1.2462137E+00    -3.8000001E-01
+ 
+ 
+                     MOMENTS OF INERTIA ABOUT THE CENTER OF RIGID BODY
+                            I(XX)               I(YY)               I(ZZ)
+                         0.1377719          0.1680101          0.3057524
+ 
+ 
+                     PRODUCTS OF INERTIA ABOUT THE CENTER OF RIGID BODY
+                            I(XY)               I(XZ)               I(YZ)
+                         2.4625831E-02     -2.7936486E-12      1.5971507E-12
+ 
+ 
+                     REFERENCE NODE IS:      2336
+ 
+ 
+                     POSITION OF THE REFERENCE NODE
+                               X                Y                Z
+                        -1.8482500E-07       80.00000         -1.0000000E-08
+ 
+ 
+                     TOTAL MASS OF RIGID BODY
+ 
+                         3.6361059E-05
+ 
+ 
+                     LOCATION OF THE CENTER OF MASS OF RIGID BODY
+                         -3.0532298E+01     1.6365142E+02    -3.8000001E-01
+ 
+ 
+                     MOMENTS OF INERTIA ABOUT THE CENTER OF RIGID BODY
+                            I(XX)               I(YY)               I(ZZ)
+                         3.9615021E-02      1.7773449E-02      5.7377969E-02
+ 
+ 
+                     PRODUCTS OF INERTIA ABOUT THE CENTER OF RIGID BODY
+                            I(XY)               I(XZ)               I(YZ)
+                         1.1529269E-02     -5.3442786E-13     -2.9949133E-14
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          2.81E+07               23                 38
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2021                                  Date 09-Mar-2022   Time 10:36:54
+   For use by FACHHOCHSCHULE SUEDWESTFALEN under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    2  INCREMENT    1
+     Transfer der Platine                                                                 TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       2     C O U P L E D - T E M P E R A T U R E - D I S P L A C E M E N T   A N A L Y S I S
+
+
+          Transfer der Platine                                                            
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                0.350    
+          AND A TOTAL TIME PERIOD OF                            7.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                3.500E-02
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                0.350    
+
+          CREEP AND SWELLING EFFECTS ARE OMITTED IN THIS STEP
+
+     THE SIZE OF THE TIME INCREMENT IS CONTROLLED BY -
+          THE TEMPERATURE CHANGE PER INCREMENT NOT EXCEEDING            10.0    
+
+          CREEP AND SWELLING EFFECTS WILL BE IGNORED.
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3972911E-04
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                      -68.45048           44.08345         -0.3799606    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                       1.157451          0.9130175           2.070388    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                      0.2333986         -3.6341752E-03      2.3402931E-03
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      0.8858880          0.2583011           1.144149    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -0.1882386         -3.2764255E-08     -1.6608195E-07
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          2.77E+07               23                 38
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2021                                  Date 09-Mar-2022   Time 10:37:06
+   For use by FACHHOCHSCHULE SUEDWESTFALEN under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    3  INCREMENT    1
+     Kontaktaufbringung Platine/Stempel                                                   TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       3     C O U P L E D - T E M P E R A T U R E - D I S P L A C E M E N T   A N A L Y S I S
+
+
+          Kontaktaufbringung Platine/Stempel                                              
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                2.900E-02
+          AND A TOTAL TIME PERIOD OF                           3.000E-02
+          THE MINIMUM TIME INCREMENT ALLOWED IS                3.000E-07
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                3.000E-02
+
+          CREEP AND SWELLING EFFECTS ARE OMITTED IN THIS STEP
+
+     THE SIZE OF THE TIME INCREMENT IS CONTROLLED BY -
+          THE TEMPERATURE CHANGE PER INCREMENT NOT EXCEEDING            10.0    
+
+          CREEP AND SWELLING EFFECTS WILL BE IGNORED.
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3972911E-04
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                      -68.45048           44.08345         -0.3799606    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                       1.157451          0.9130175           2.070388    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                      0.2333986         -3.6341752E-03      2.3402931E-03
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      0.8858880          0.2583011           1.144149    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                     -0.1882386         -3.2764255E-08     -1.6608195E-07
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          2.77E+07               23                 38
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS IS ENDED BECAUSE OF THE PROBLEMS ENCOUNTERED
+          LOOK AT THE MSG FILE FOR THE CAUSE OF THE TERMINATION
+
+
+
+                              ANALYSIS IS ENDED
+                              WITH      1 ERROR MESSAGES ON THE MSG FILE
+                              AND       3 WARNING MESSAGES ON THE DAT FILE
+                              AND     369 WARNING MESSAGES ON THE MSG FILE
+                                      296 WARNINGS ARE FOR NUMERICAL PROBLEMS
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =   47.100    
+       SYSTEM TIME (SEC)    =   10.300    
+       TOTAL CPU TIME (SEC) =   57.400    
+       WALLCLOCK TIME (SEC) =         32
