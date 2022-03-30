@@ -20,7 +20,7 @@ def extractData(filepath):
     # WZ Matrize beginnt bei: 2672
     # WZ Stempel beginnt bei: 5208    
         nodelist=[5208+5,5208+344,2672+304,2672+327,2672+397,8,9,271,238,569]
-        start_time = 380
+        start_time = times[-1] # 380
 
     elif 'M2' in filepath:
         print('M2')
@@ -29,7 +29,7 @@ def extractData(filepath):
     # WZ Matrize beginnt bei: 2296
     # WZ Stempel beginnt bei: 5656
         nodelist=[5656+5,5656+344,2296+304,2296+327,2296+397,8,9,271,238,569]
-        start_time = 367
+        start_time = times[-1] #367
 
     else:
         print('invalid step')
