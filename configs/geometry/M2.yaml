@@ -1,0 +1,26 @@
+name: M2
+description: >
+  Tool configuration M2 — Werkzeug mit verschobener Matrize-Origin 2296 und
+  Stempel-Origin 5656. Schließt direkt an M1 an (start_time = letzter
+  Zeitstempel der vorigen Stufe).
+start_time_source: previous
+node_groups:
+  Stempel:
+    origin: 5656
+    columns:
+      - {offset: 5,   label: Stempel_innen_mitte}
+      - {offset: 344, label: Stempel_aussen}
+  Matrize:
+    origin: 2296
+    columns:
+      - {offset: 304, label: Matrize_zarge_oben}
+      - {offset: 327, label: Matrize_zarge_mitte}
+      - {offset: 397, label: Matrize_zarge_unten}
+  Werkstueck:
+    origin: 0
+    columns:
+      - {offset: 8,   label: Werkstueck_boden}
+      - {offset: 9,   label: Werkstueck_zarge_unten}
+      - {offset: 271, label: Werkstueck_zarge_mitte}
+      - {offset: 238, label: Werkstueck_zarge_mitte_2}
+      - {offset: 569, label: Werkstueck_zarge_oben}

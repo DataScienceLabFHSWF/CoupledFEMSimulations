@@ -1,0 +1,25 @@
+name: M3
+description: >
+  Tool configuration M3 — geometrisch identisch zu M1, schließt aber zeitlich
+  an die vorige Stufe an (start_time = letzter Zeitstempel).
+start_time_source: previous
+node_groups:
+  Stempel:
+    origin: 5208
+    columns:
+      - {offset: 5,   label: Stempel_innen_mitte}
+      - {offset: 344, label: Stempel_aussen}
+  Matrize:
+    origin: 2672
+    columns:
+      - {offset: 304, label: Matrize_zarge_oben}
+      - {offset: 327, label: Matrize_zarge_mitte}
+      - {offset: 397, label: Matrize_zarge_unten}
+  Werkstueck:
+    origin: 0
+    columns:
+      - {offset: 8,   label: Werkstueck_boden}
+      - {offset: 9,   label: Werkstueck_zarge_unten}
+      - {offset: 271, label: Werkstueck_zarge_mitte}
+      - {offset: 238, label: Werkstueck_zarge_mitte_2}
+      - {offset: 569, label: Werkstueck_zarge_oben}

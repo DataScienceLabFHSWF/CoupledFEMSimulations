@@ -3,36 +3,24 @@ import csv
 import os
 import numpy as np
 
+# v2-publication: node geometry now lives in configs/geometry/{M1,M2,M3}.yaml
+# and is loaded by geometry.resolve_geometry(). Editing the mesh no longer
+# requires touching this script.
+from geometry import resolve_geometry, csv_header
+
+
 def extractData(filepath):
-    if 'M1' in filepath:
-        print('M1')
-    # M1
-    # Platine beginnt bei 0
-    # WZ Matrize beginnt bei: 2672
-    # WZ Stempel beginnt bei: 5208
-        nodelist=[5208+5,5208+344,2672+304,2672+327,2672+397,8,9,271,238,569]
+    geom = resolve_geometry(filepath)
+    print(geom.name)
+    nodelist = geom.nodelist
+    if geom.start_time_source == "zero":
         start_time = 0
-
-    elif 'M3' in filepath:
-        print('M3')
-    # M3=M1
-    # Platine beginnt bei 0
-    # WZ Matrize beginnt bei: 2672
-    # WZ Stempel beginnt bei: 5208    
-        nodelist=[5208+5,5208+344,2672+304,2672+327,2672+397,8,9,271,238,569]
-        start_time = times[-1] # 380
-
-    elif 'M2' in filepath:
-        print('M2')
-    # M2
-    # Platine beginnt bei 0
-    # WZ Matrize beginnt bei: 2296
-    # WZ Stempel beginnt bei: 5656
-        nodelist=[5656+5,5656+344,2296+304,2296+327,2296+397,8,9,271,238,569]
-        start_time = times[-1] #367
-
     else:
-        print('invalid step')
+        # M2/M3 chain onto the previous tool's last timestamp; `times` is
+        # populated by the previous extractData call in the outer loop.
+        start_time = times[-1]
+
+    nodelabels = csv_header(geom)
 
     #open odb file
     odb = openOdb(filepath)
@@ -69,7 +57,6 @@ def extractData(filepath):
 
 odbFiles= [os.path.join('FEM_SIMS', f) for f in os.listdir('FEM_SIMS') if f.endswith(".odb")]
 print(len(odbFiles))
-nodelabels="'timestamp', 'Stempel_innen_mitte', 'Stempel_aussen', 'Matrize_zarge_oben', 'Matrize_zarge_mitte','Matrize_zarge_unten', 'Werkstueck_boden', 'Werkstueck_zarge_unten' , 'Werkstueck_zarge_mitte', 'Werkstueck_zarge_oben'"
 
 corrupt_files = []
 for file in odbFiles:

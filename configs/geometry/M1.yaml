@@ -1,0 +1,36 @@
+# Geometry configuration for FEM tool M1.
+#
+# v1 (thesis): hardcoded in extract_temps.py as
+#   nodelist = [5208+5, 5208+344, 2672+304, 2672+327, 2672+397,
+#               8, 9, 271, 238, 569]
+# v2 (publication): mesh-independent description with named regions.
+#
+# Each group declares an `origin` (ABAQUS node index where that mesh part
+# starts) and `offsets` (the picked nodes relative to the origin). The
+# final ABAQUS node index is `origin + offset`. The order of (group, offset)
+# pairs determines column order in the exported CSV.
+name: M1
+description: >
+  Tool configuration M1 — Werkzeug mit Matrize-Origin 2672 und Stempel-Origin
+  5208. Identisch zu M3.
+start_time_source: zero            # M1 starts at simulation time 0
+node_groups:
+  Stempel:
+    origin: 5208
+    columns:
+      - {offset: 5,   label: Stempel_innen_mitte}
+      - {offset: 344, label: Stempel_aussen}
+  Matrize:
+    origin: 2672
+    columns:
+      - {offset: 304, label: Matrize_zarge_oben}
+      - {offset: 327, label: Matrize_zarge_mitte}
+      - {offset: 397, label: Matrize_zarge_unten}
+  Werkstueck:
+    origin: 0
+    columns:
+      - {offset: 8,   label: Werkstueck_boden}
+      - {offset: 9,   label: Werkstueck_zarge_unten}
+      - {offset: 271, label: Werkstueck_zarge_mitte}
+      - {offset: 238, label: Werkstueck_zarge_mitte_2}
+      - {offset: 569, label: Werkstueck_zarge_oben}
